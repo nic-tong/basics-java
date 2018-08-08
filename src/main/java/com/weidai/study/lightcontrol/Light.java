@@ -13,10 +13,10 @@ public class Light {
 
 	boolean on;
 	public void on() {
-		System.out.println("开灯");
+		System.out.println(System.currentTimeMillis() + " 开灯");
 	}
 	
 	public void off() {
-		System.out.println("关灯");
+		System.out.println(System.currentTimeMillis() + " 关灯");
 	}
 }

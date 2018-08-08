@@ -30,8 +30,15 @@ public class OnThread implements Runnable {
 					light.on();
 					light.on = true;
 					light.notify();
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else {
 					try {
+						System.out.println("已关灯,等待");
 						light.wait();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
