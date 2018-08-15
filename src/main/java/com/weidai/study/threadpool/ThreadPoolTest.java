@@ -23,7 +23,6 @@ public class ThreadPoolTest {
 		try {
 			Thread.currentThread().join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		threadPool.shutdown();
