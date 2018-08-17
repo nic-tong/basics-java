@@ -30,3 +30,4 @@ gen/
 *.xls
 application.properties
 img/
+/.apt_generated/
