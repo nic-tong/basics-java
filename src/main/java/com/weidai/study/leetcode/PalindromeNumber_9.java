@@ -1,6 +1,5 @@
 package com.weidai.study.leetcode;
 
-import jnr.ffi.types.mode_t;
 
 /**
  * @描述
