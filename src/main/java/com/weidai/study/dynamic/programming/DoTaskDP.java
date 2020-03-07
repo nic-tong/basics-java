@@ -25,6 +25,7 @@ import com.google.common.collect.Lists;
  * 0---1---2---3---4---5---6---7---8---9---10--11------------------->时间
  *
  *  解题思路  每个任务都可能做和不做，对于第i个任务，对应的收益为OPT(i) = max(OPT(i-1),OPT(pre(i))+ a[i])
+ *  规划任务的出口为
  *  当i=0时，OPT(0) = 5
  * @author lianghong.tlh
  * @date 2020/03/07
