@@ -7,7 +7,7 @@ package com.weidai.study.dynamic.programming;
  * @author lianghong.tlh
  * @date 2020/03/09
  */
-public class ExistSumDP {
+public class ExistSubSetDP {
 
 
 
