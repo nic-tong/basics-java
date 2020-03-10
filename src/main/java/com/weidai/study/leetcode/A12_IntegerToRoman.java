@@ -9,7 +9,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月28日 下午3:14:58
  */
-public class IntegerToRoman_12 {
+public class A12_IntegerToRoman {
 
 	public String intToRoman(int num) {
 		String M[] = {"", "M", "MM", "MMM"};
@@ -19,6 +19,7 @@ public class IntegerToRoman_12 {
 		StringBuilder sb = new StringBuilder();
 		sb.append(M[num/1000]).append(C[(num%1000)/100]).append(X[(num%100)/10]).append(I[num%10]);
         return sb.toString();
+
     }
 	
 	public String intToRoman2(int num) {
@@ -34,5 +35,7 @@ public class IntegerToRoman_12 {
         }
         
         return result.toString();
+
+
 	}
 }

@@ -14,7 +14,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月15日 下午7:20:05
  */
-public class AddTwoNumbers_2 {
+public class A2_AddTwoNumbers {
 
 	private static class ListNode {
 		int val;

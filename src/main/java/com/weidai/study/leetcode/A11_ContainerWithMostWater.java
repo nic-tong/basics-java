@@ -9,7 +9,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月28日 下午2:29:02
  */
-public class ContainerWithMostWater_11 {
+public class A11_ContainerWithMostWater {
 
 	public int maxArea(int[] height) {
         

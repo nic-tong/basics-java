@@ -9,7 +9,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月13日 下午6:17:23
  */
-public class MedianOfTwoSortedArrays_4 {
+public class A4_MedianOfTwoSortedArrays {
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1 = nums1.length;

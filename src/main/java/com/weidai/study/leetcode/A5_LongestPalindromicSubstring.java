@@ -10,7 +10,7 @@ import com.alibaba.druid.sql.visitor.functions.If;
  * @author nic 
  * @time：2018年8月17日 下午9:54:26
  */
-public class LongestPalindromicSubstring_5 {
+public class A5_LongestPalindromicSubstring {
 
 	public static String longestPalindrome(String str) {
 

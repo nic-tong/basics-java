@@ -9,7 +9,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月21日 下午4:40:27
  */
-public class ReverseInteger_7 {
+public class A7_ReverseInteger {
 	  
     public static int reverse(int x) {
         boolean zheng = x < 0? false: true;

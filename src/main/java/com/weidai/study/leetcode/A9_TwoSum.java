@@ -23,7 +23,7 @@ import com.alibaba.fastjson.JSON;
  * @author nic
  * @date: 2018年8月14日 下午9:01:17
  */
-public class TwoSum_1 {
+public class A9_TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         if (nums.length<2) {

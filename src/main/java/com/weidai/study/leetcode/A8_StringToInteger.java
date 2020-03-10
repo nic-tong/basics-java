@@ -11,7 +11,7 @@ import scala.collection.generic.BitOperations.Int;
  * @author nic
  * @date: 2018年8月22日 上午9:48:06
  */
-public class StringToInteger_8 {
+public class A8_StringToInteger {
 
 	public static int myAtoi(String str) {
 		String newStr = str.trim();

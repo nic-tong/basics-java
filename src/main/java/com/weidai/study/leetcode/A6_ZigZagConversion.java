@@ -9,7 +9,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @date: 2018年8月21日 下午3:53:40
  */
-public class ZigZagConversion_6 {
+public class A6_ZigZagConversion {
 
 	public static String convert(String s, int numRows) {
 		if (s.length() <= numRows || numRows == 1)

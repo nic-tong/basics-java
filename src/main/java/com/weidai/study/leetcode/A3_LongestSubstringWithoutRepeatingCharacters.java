@@ -11,7 +11,7 @@ import com.google.common.primitives.Ints;
  * @author nic 
  * @time：2018年8月16日 下午6:56:50
  */
-public class LongestSubstringWithoutRepeatingCharacters_3 {
+public class A3_LongestSubstringWithoutRepeatingCharacters {
 
 	public static int lengthOfLongestSubstring(String s) {
 		if (s.length() == 0)

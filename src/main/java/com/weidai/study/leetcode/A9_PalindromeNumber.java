@@ -6,7 +6,7 @@ package com.weidai.study.leetcode;
  * @author nic
  * @time：2018年8月22日 下午1:56:12
  */
-public class PalindromeNumber_9 {
+public class A9_PalindromeNumber {
 
 	/**
 	 * 解法1 翻转整个数，看两个数是否相等
