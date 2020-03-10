@@ -7,7 +7,7 @@ package com.weidai.study.leetcode;
  */
 public class A13_RomanToInteger {
 
-    public static int romanToInteger(String roman) {
+    public static int romanToInt(String roman) {
         int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] strs = {"M", "CM", "D", "CD", "C", "XC","L","XL","X","IX","V","IV","I"};
 
@@ -23,7 +23,7 @@ public class A13_RomanToInteger {
     }
 
     public static void main(String[] args) {
-        System.out.println(romanToInteger("MCMXCIV"));
+        System.out.println(romanToInt("MCMXCIV"));
     }
 
 }
