@@ -15,30 +15,42 @@ import com.google.common.collect.Lists;
  */
 public class A15_3Sum {
 
+    /**
+     * 固定一个值，后面两个值左右移动
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
 
+        List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
-
-        int i = 0;
-        int j = nums.length - 1;
-        boolean bigInteger = true;
-        int turn = 1;
-        int k = i + 1;
-        List<List<Integer>> list = new ArrayList<>();
-        while (i < 0 && j > 0) {
-            int sum = nums[i] + nums[j] + nums[k];
-            if (sum == 0) {
-                list.add(Lists.newArrayList(nums[i], nums[k], nums[j]));
-                k = k + turn;
-                if(turn>0) {
-                    i=i+1;
-                } else {
-                    j= j-1;
+        for(int i=0; i<nums.length-2; i++) {
+            if(i == 0 || nums[i] != nums[i-1]) {
+                int j = i+1, k = nums.length-1;
+                while(j < k) {
+                    if(nums[i] + nums[j] + nums[k] == 0) {
+                        List<Integer> list = new ArrayList<>();
+                        list.add(nums[i]);
+                        list.add(nums[j]);
+                        list.add(nums[k]);
+                        res.add(list);
+                        j++;
+                        k--;
+                        while(j < k && nums[j] == nums[j-1]) {
+                            j++;
+                        }
+                        while(j < k && nums[k] == nums[k+1]) {
+                            k--;
+                        }
+                    }else if(nums[i] + nums[j] + nums[k] < 0) {
+                        j++;
+                    }else {
+                        k--;
+                    }
                 }
-                continue;
             }
-
         }
-        return list;
+
+        return res;
     }
 }
