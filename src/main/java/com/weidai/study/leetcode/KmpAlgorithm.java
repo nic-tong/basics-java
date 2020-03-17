@@ -12,32 +12,69 @@ public class KmpAlgorithm {
 
     public static boolean contains(String originStr, String patternStr) {
 
-        char[] originChar = originStr.toCharArray();
-
-        char[] patternChar = patternStr.toCharArray();
-
-        int[] nextPrefix = new int[patternChar.length];
-
-        nextPrefix[0] = -1;
-        for (int i = 1; i < nextPrefix.length; i++) {
-            nextPrefix[i] = getAffix(patternChar, i-1);
-        }
+        int[] nextPrefix = getPrefix(patternStr);
 
         // 进行KMP比较
-        int startIndex = 0;
-        for (int j = 0; j < originChar.length; j++) {
-            if(originChar[j] == patternChar[j-startIndex]) {
-                if(j-startIndex == patternChar.length-1) {
-                    return true;
-                }
-            }else {
-                startIndex += j - startIndex - nextPrefix[j-startIndex];
-                if(startIndex < j){
-                    j--;
+        int j=0;
+        int i=0;
+        while(i < originStr.length()) {
+            if (j == patternStr.length() - 1 && originStr.charAt(i) == patternStr.charAt(j)) {
+                System.out.println("found the patten at :"+( i-j));
+                j= nextPrefix[j];
+            }
+            if(originStr.charAt(i) == patternStr.charAt(j)) {
+                i++;j++;
+            } else {
+                j = nextPrefix[j];
+                if(j == -1) {
+                    i++;j++;
                 }
             }
         }
+        //int startIndex = 0;
+        //for (int j = 0; j < originChar.length; j++) {
+        //    if(originChar[j] == patternChar[j-startIndex]) {
+        //        if(j-startIndex == patternChar.length-1) {
+        //            return true;
+        //        }
+        //    }else {
+        //        startIndex += j - startIndex - nextPrefix[j-startIndex];
+        //        if(startIndex < j){
+        //            j--;
+        //        }
+        //    }
+        //}
         return false;
+    }
+
+
+    private static int [] getPrefix(String patten) {
+        int n = patten.length();
+        int [] prefix = new int[n];
+
+        prefix[0] = 0;
+        int len = 0;
+        int i = 1;
+        while (i < n) {
+            if(patten.charAt(i) == patten.charAt(prefix[len])) {
+                len++;
+                prefix[i] = len;
+                i++;
+            } else {
+                if(len == 0) {
+                    prefix[i] = len;
+                    i++;
+                } else {
+                    len = prefix[len - 1];
+                }
+            }
+        }
+
+        for(int j=prefix.length-1 ; j > 0 ; j--) {
+            prefix[j] = prefix[j-1];
+        }
+        prefix[0] = -1;
+        return prefix;
     }
 
     /**
