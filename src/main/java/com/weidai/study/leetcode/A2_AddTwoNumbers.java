@@ -16,7 +16,7 @@ package com.weidai.study.leetcode;
  */
 public class A2_AddTwoNumbers {
 
-	private static class ListNode {
+	public static class ListNode {
 		int val;
 		ListNode next;
 
