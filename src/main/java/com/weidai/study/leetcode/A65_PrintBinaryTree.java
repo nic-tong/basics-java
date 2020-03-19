@@ -3,6 +3,8 @@ package com.weidai.study.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.weidai.study.leetcode.tree.BinaryTree;
+
 /**
  * @author lianghong.tlh
  * @date 2020/03/19
@@ -25,7 +27,7 @@ public class A65_PrintBinaryTree {
         for(int i=0; i< strArr.length; i++) {
             List<String> stringList = new ArrayList<>();
             for (int j=0; j< strArr[i].length; j++) {
-                stringList.add(strArr[i][j] == null? "": strArr[i][j]);
+                stringList.add(strArr[i][j] == null? "\"\"": strArr[i][j]);
 
             }
             lists.add(stringList);
@@ -50,6 +52,18 @@ public class A65_PrintBinaryTree {
         return Math.max(death(root.left), death(root.right)) + 1;
     }
 
+    public static void monitorTree(TreeNode root) {
+        if(root == null) {
+            return;
+        }
+        monitorTree(root.left);
+        monitorTree(root.right);
+        TreeNode tempLeft = root.left;
+        root.left = root.right;
+        root.right = tempLeft;
+
+    }
+
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);
         TreeNode node1 = new TreeNode(2);
@@ -59,6 +73,17 @@ public class A65_PrintBinaryTree {
         node.right= node2;
         node1.right = node4;
         A65_PrintBinaryTree a65_printBinaryTree = new A65_PrintBinaryTree();
-        a65_printBinaryTree.printTree(node);
+        List<List<String>> lists = a65_printBinaryTree.printTree(node);
+        lists.forEach(l-> {
+            l.forEach(n-> System.out.print(n+","));
+            System.out.println();
+        });
+        System.out.println("--------------------------------");
+        monitorTree(node);
+        List<List<String>> lists2 = a65_printBinaryTree.printTree(node);
+        lists2.forEach(l-> {
+            l.forEach(n-> System.out.print(n+","));
+            System.out.println();
+        });
     }
 }
