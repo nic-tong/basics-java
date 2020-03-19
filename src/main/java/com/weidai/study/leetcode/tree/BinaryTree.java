@@ -61,6 +61,13 @@ public class BinaryTree {
         return left + right;
     }
 
+    /**
+     * 求 前k层节点的个数。
+     * @param root
+     * @param k
+     * @param <T>
+     * @return
+     */
     public static <T> int getKNumOfNode(TreeNode<T> root, int k) {
         if (root == null || k < 1) {
             return 0;
@@ -72,6 +79,12 @@ public class BinaryTree {
         return getKNumOfNode(root.left, k - 1) + getKNumOfNode(root.right, k - 1);
     }
 
+    /**
+     * 前序遍历
+     * @param root
+     * @param qian
+     * @param <T>
+     */
     public static <T> void beforBianLi(TreeNode<T> root, List<T> qian) {
         if (root == null) {
             return;
