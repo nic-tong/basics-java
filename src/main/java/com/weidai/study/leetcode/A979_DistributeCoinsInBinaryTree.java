@@ -1,6 +1,7 @@
 package com.weidai.study.leetcode;
 
 /**
+ * 给定一个有 N 个结点的二叉树的根结点 root，树中的每个结点上都对应有 node.val 枚硬币，并且总共有 N 枚硬币。
  * @author lianghong.tlh
  * @date 2020/03/21
  */
