@@ -35,7 +35,7 @@ public class MedianOfList {
     }
 
 
-    public static int getMedian(int [] array) {
+    public static double getMedian(int [] array) {
         int low = 0;
         int high = array.length -1;
         int div = low;
@@ -48,10 +48,25 @@ public class MedianOfList {
                 div = getIndex(array, 0, div);
             }
         }
-        return array[div];
+        if(array.length%2 == 1) {
+            return (double)array[div];
+        }
+
+        high = div;
+        int median2 = median - 1;
+        int div2 = low;
+        while (div2 != median2) {
+            if(div2 < median2) {
+                div2 = getIndex(array, div2, high);
+            } else {
+                div2 = getIndex(array, 0, div2);
+            }
+        }
+        return (array[div] + array[div2])/2d;
     }
 
     public static void main(String[] args) {
-        System.out.println();
+        int []array = {3,1,2,4,6,9};
+        System.out.println(getMedian(array));
     }
 }
